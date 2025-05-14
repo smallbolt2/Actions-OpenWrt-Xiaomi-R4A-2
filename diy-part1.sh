@@ -27,7 +27,8 @@ sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.de
 ### 修改主题文件
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
-
+# 修改 argon 为默认主题,可根据你喜欢的修改成其他的（不选择那些会自动改变为默认主题的主题才有效果）
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 ### 修改为R4A千兆版Breed直刷版
 ## mt7621_xiaomi_mir3g-v2.dts 好像被改成了 mt7621_xiaomi_mi-router-4a-3g-v2.dtsi  测试一下
 ## 1.修改 mt7621_xiaomi_mir3g-v2.dts
